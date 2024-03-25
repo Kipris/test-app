@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import ContactInfo from "@/components/contact-info";
 import { IContact } from "@/types/contact";
@@ -17,10 +16,6 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = async ({ params }) => {
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${params.slug}`);
   const contact: IContact = await response.json();
-
-  if (!contact || Object.keys(contact).length === 0) {
-    return notFound();
-  }
 
   return (
     <>

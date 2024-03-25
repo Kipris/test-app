@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    text-decoration: underline;
+    padding: 10px 30px;
+}
+
+.link.active {
+    color: blueviolet;
+}
